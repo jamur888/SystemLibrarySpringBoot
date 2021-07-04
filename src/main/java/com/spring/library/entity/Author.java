@@ -3,6 +3,7 @@ package com.spring.library.entity;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name="author")
@@ -64,5 +65,18 @@ public class Author {
 
     public void setAuthorDescription(String authorDescription) {
         this.authorDescription = authorDescription;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Author author = (Author) o;
+        return authorId == author.authorId && Objects.equals(authorName, author.authorName) && Objects.equals(authorDescription, author.authorDescription);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(authorId, authorName, authorDescription);
     }
 }

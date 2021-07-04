@@ -2,6 +2,7 @@ package com.spring.library.entity;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 public class Book {
@@ -122,5 +123,18 @@ public class Book {
 
     public void setPublisher(List<Publisher> publisher) {
         this.publisher = publisher;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return bookId == book.bookId && Objects.equals(isbn, book.isbn) && Objects.equals(bookName, book.bookName) && Objects.equals(bookSubName, book.bookSubName) && Objects.equals(bookSerialName, book.bookSerialName) && Objects.equals(bookDescription, book.bookDescription);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(bookId, isbn, bookName, bookSubName, bookSerialName, bookDescription);
     }
 }
