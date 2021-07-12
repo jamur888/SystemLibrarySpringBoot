@@ -27,3 +27,12 @@ Create table  publisher_books(
                                  publisher_publisher_id BIGINT references publisher_(book_id),
                                  books_book_id BIGINT references book(book_id)
 );
+
+Create table  users(
+                       id serial primary key ,
+                       login varchar(255),
+                       password varchar(255),
+                       firstname varchar(255),
+                       lastname varchar(255),
+                       age int
+)

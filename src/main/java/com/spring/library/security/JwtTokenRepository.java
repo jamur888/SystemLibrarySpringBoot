@@ -1,4 +1,4 @@
-package com.spring.library.repository;
+package com.spring.library.security;
 
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
@@ -47,7 +47,6 @@ public class JwtTokenRepository implements CsrfTokenRepository {
                     .compact();
         } catch (JwtException e) {
             e.printStackTrace();
-            //ignore
         }
         return new DefaultCsrfToken("x-csrf-token", "_csrf", token);
     }
@@ -74,6 +73,4 @@ public class JwtTokenRepository implements CsrfTokenRepository {
         if (response.getHeaderNames().contains("x-csrf-token"))
             response.setHeader("x-csrf-token", "");
     }
-
-
 }

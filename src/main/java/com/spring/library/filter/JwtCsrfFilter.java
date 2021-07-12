@@ -1,6 +1,6 @@
 package com.spring.library.filter;
 
-import com.spring.library.repository.JwtTokenRepository;
+import com.spring.library.security.JwtTokenRepository;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import org.springframework.security.web.csrf.CsrfToken;

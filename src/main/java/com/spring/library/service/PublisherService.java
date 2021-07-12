@@ -15,7 +15,7 @@ public class PublisherService {
     PublisherRepository publisherRepository;
 
     @Autowired
-   BookService bookService;
+    BookService bookService;
 
     public List<Publisher> getAllPublishers() {
         List<Publisher> publishers = publisherRepository.findAll();

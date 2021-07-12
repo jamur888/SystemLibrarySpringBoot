@@ -34,8 +34,7 @@ public class PublisherRestController {
     }
 
     @DeleteMapping("/publishers/{id}")
-    public void deletePublisher(@PathVariable long id)
-    {
+    public void deletePublisher(@PathVariable long id) {
         publisherService.deletePublisher(id);
     }
 }
